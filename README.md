@@ -8,4 +8,6 @@ In the directory **Data Analysis**, there are Batch Shapiro Test for nomality te
 
 In the directory **Data Analysis/Anova**, it will plot the Tukey-Range Test Figure, if you need some Post-Host test.
 
-In the directory **DataIO**, you will know what's that from the filename, frankly speaking, I get the function from Stack Overflow, if you know who wrote this functions, please connect with me.
+In the directory **DataIO**, you will know what's that from the filename, frankly speaking, I get the function from Stack Overflow, if you know who wrote this functions, please Contact Me
+
+My E-mail is chenhan28@gmail.com
