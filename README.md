@@ -6,7 +6,7 @@ In the directory **Data Analysis**, there are Batch Shapiro Test for nomality te
 
 *PS.* Maybe I wiil add the switch to choose which method to calculate the lambda, guerrero or loglike.
 
-In the directory **Data Analysis/Anova**, it will plot the Tukey-Range Test Figure, if you need some Post-Host test.
+In the directory **Data Analysis/Anova**, it will plot the Tukey-Range Test Figure, if you need some Post-Hoc test.
 
 In the directory **DataIO**, you will know what's that from the filename, frankly speaking, I get the function from Stack Overflow, if you know who wrote this functions, please Contact Me
 
