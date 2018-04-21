@@ -1,5 +1,5 @@
 library(raster)
-getRasterData<-function(workdir,file.type = "*.tif",coord,methd = "bilinear"){
+getRasterData<-function(workdir,coord,methd = "bilinear"){
   
   # workdir is the Dir of raster files that you want to extract value.
   # file.type can be any kind of raster file extensions which the raster package support.
@@ -7,9 +7,9 @@ getRasterData<-function(workdir,file.type = "*.tif",coord,methd = "bilinear"){
   # methd is the Methods Parameter of Extract Function, it support "simple" and "bilinear", for more information, just type ?extract
   
   setwd(workdir)
-  
   # Combine raster files as RASTER LAYER STACK in CURRENT DIR.
-  datafiles <- Sys.glob(file.type) #Or whatever identifies your files
+  # datafiles <- Sys.glob(file.type)
+  datafiles <- Sys.glob("*.tif")#Or whatever identifies your files
   resultingStack <- stack()
   for(i in 1:NROW(datafiles)){
     tempraster <- raster(datafiles[i])
