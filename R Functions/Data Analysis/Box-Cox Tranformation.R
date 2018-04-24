@@ -1,11 +1,18 @@
-data<-abVeg[,1]
-BC.Trans<-function(diver,data){
-  lambda<-apply(diver, 2, BoxCox.lambda)
+library(forecast)
+
+# dataDF is the data.frame that you want to tranformation
+boxcox_trans<-function(dataDF){
+  # Initialize the output data.frame, the row-number same as dataDF.
+  outputDF <- dataDF[,0]
+  # Caculate lambda for Box-Cox transformation
+  lambda<-apply(dataDF, 2, BoxCox.lambda)
+  # Out-put the result of Box-Cox transofrmation
+  
+  #apply(dataDF, 2, )
+  
   for (i in 1:length(lambda)) {
-    t<-BoxCox(diver[i],lambda[i])
-    data<-cbind(data,t)
+    t<-BoxCox(dataDF[i],lambda[i])
+    outputDF<-cbind(outputDF,t)
   }
-  return(data)
+  return(outputDF)
 }
-out<-rownames(summary(influence.measures(lm.ab.abv)))
-out<-as.numeric(out)
