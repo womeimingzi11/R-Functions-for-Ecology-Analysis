@@ -4,9 +4,10 @@
 #Tukey.labels<-data.frame(multcompLetters(Tukey.levels,rev = TRUE)['Letters'])
 #} else {Tukey.labels<-data.frame(multcompLetters(Tukey.levels)['Letters'])}
 
-TukeyTestFigure<- function(Y,X,Yletter,Xletter,rev = TRUE){
-  library(multcompView)
-  library(plotrix)
+library(multcompView)
+library(plotrix)
+
+TukeyTestFigure<- function(Y,X,Yletter,Xletter,rev = FALSE){
 # Function to calculate the p value of F-test  (with Library(multcompView))
   lmp<-function (modelobject) {
     if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")

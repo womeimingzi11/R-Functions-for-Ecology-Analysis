@@ -24,5 +24,7 @@ spDiversity_calc<-function(spdata,r_name  = spdata[,0], file_name = "Diversity I
   
   if (write == TRUE) {
     write.csv(div,file_name,row.names = FALSE)
-    }
+  }
+  
+  return(div)
 }
