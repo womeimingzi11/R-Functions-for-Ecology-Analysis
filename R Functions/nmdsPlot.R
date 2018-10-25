@@ -50,12 +50,9 @@ P+theme(panel.grid = element_blank(),legend.title=element_blank())
 # Plot the points, draw the legend, and draw the stress.
 # If you have more than 6 shapes, the scale_color_manual and scale_shape_manual is the workaround.
 
-P+geom_point(aes(data=MyMeta,shape = MyMeta$treatMent, color = MyMeta$treatMent)
-             )+scale_color_manual(values = 1:nlevels(MyMeta$treatMent)
-                                  )+scale_shape_manual(values = 1:nlevels(MyMeta$treatMent)
-                                                       )+labs(shape="Habitat",color = "Habitat")+annotate("text",
-                                                                                                          x=min(NMDS$MDS1),y=min(NMDS$MDS2),
-                                                                                                          hjust=0,vjust=0,
-                                                                                                          label=paste("Stress:",nmdsRaw$stress)
-                                                                                                          )+geom_path(data=df_ell, aes(x=NMDS1, y=NMDS2,colour=group), 
-                                                                                                                      size=1, linetype=2, show.legend = FALSE)
+P+geom_point(aes(data=MyMeta,shape = MyMeta$treatMent, color = MyMeta$treatMent)+
+               scale_color_manual(values = 1:nlevels(MyMeta$treatMent))+
+               scale_shape_manual(values = 1:nlevels(MyMeta$treatMent))+
+               labs(shape="Habitat",color = "Habitat")+
+               annotate("text",x=min(NMDS$MDS1),y=min(NMDS$MDS2),hjust=0,vjust=0,label=paste("Stress:",nmdsRaw$stress))+
+               geom_path(data=df_ell, aes(x=NMDS1, y=NMDS2,colour=group), size=1, linetype=2, show.legend = FALSE)

@@ -1,5 +1,6 @@
-library(raster)
 getRasterData<-function(workdir,coord,methd = "bilinear"){
+  
+  require("raster")
   
   # workdir is the Dir of raster files that you want to extract value.
   # file.type can be any kind of raster file extensions which the raster package support.
@@ -17,5 +18,14 @@ getRasterData<-function(workdir,coord,methd = "bilinear"){
   }
   
   # Extract values from RASTER LAYER STACK by COORD.
-  extract.data<-as.data.frame(extract(resultingStack,coord,methods = methd))
+  resultDF<-data.frame(extract(resultingStack,coord,methods = methd))
+  colnames(resultDF) <- c("mat","MeanDiurnalRange","Isothermality","Temperature.Seasonality",
+                          "MaxTemperatureofWarmestMonth","MinTemperatureofColdestMonth","TemperatureAnnualRange",
+                          "MeanTemperatureOfWettestQuarter","MeanTemperatureOfDriestQuarter",
+                          "MeanTemperatureOfWarmestQuarter","MeanTemperatureOfColdestQuarter",
+                          "map","PrecipitationOfWettestMonth","PrecipitationOfDriestMonth",
+                          "PrecipitationSeasonality","PrecipitationOfWettestQuarter","PrecipitationOfDriestQuarter",
+                          "PrecipitationOfWarmestQuarter","PrecipitationOfColdestQuarter"
+                          )
+  resultDF
 }
